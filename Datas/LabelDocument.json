@@ -193,6 +193,11 @@
     "Code": "FailedPatch",
     "Kor": "패치 실패",
     "Eng": "FailedPatch"
+  },
+  {
+    "Code": "DragDelay",
+    "Kor": "드래그 딜레이",
+    "Eng": "Drag Delay"
   }
 ]
 

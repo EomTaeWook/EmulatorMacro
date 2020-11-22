@@ -55,6 +55,7 @@
         TriggerToNext,
 
         FailedPatch,
+        DragDelay,
 
         Max
     }

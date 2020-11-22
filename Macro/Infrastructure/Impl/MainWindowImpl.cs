@@ -384,7 +384,7 @@ namespace Macro
             {
                 LogHelper.Debug($">>>>Drag Mouse Save Position X : {model.MouseTriggerInfo.StartPoint.X} Save Position Y : {model.MouseTriggerInfo.StartPoint.Y} Target X : { mousePosition.X } Target Y : { mousePosition.Y }");
                 NativeHelper.PostMessage(hWnd, WindowMessage.LButtonDown, 1, mousePosition.ToLParam());
-                Task.Delay(100).Wait();
+                Task.Delay(10).Wait();
                 for (int i = 0; i < model.MouseTriggerInfo.MiddlePoint.Count; ++i)
                 {
                     mousePosition = new Point()
@@ -393,7 +393,7 @@ namespace Macro
                         Y = Math.Abs(model.ProcessInfo.Position.Top + model.MouseTriggerInfo.MiddlePoint[i].Y * -1) * factor.Item2
                     };
                     NativeHelper.PostMessage(hWnd, WindowMessage.MouseMove, 1, mousePosition.ToLParam());
-                    Task.Delay(100).Wait();
+                    Task.Delay(this._config.DragDelay).Wait();
                 }
                 mousePosition = new Point()
                 {
@@ -401,7 +401,7 @@ namespace Macro
                     Y = Math.Abs(model.ProcessInfo.Position.Top + model.MouseTriggerInfo.EndPoint.Y * -1) * factor.Item2
                 };
                 NativeHelper.PostMessage(hWnd, WindowMessage.MouseMove, 1, mousePosition.ToLParam());
-                Task.Delay(100).Wait();
+                Task.Delay(10).Wait();
                 NativeHelper.PostMessage(hWnd, WindowMessage.LButtonUp, 0, mousePosition.ToLParam());
                 LogHelper.Debug($">>>>Drag Mouse Save Position X : {model.MouseTriggerInfo.EndPoint.X} Save Position Y : {model.MouseTriggerInfo.EndPoint.Y} Target X : { mousePosition.X } Target Y : { mousePosition.Y }");
             }

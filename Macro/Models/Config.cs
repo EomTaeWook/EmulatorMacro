@@ -11,6 +11,7 @@ namespace Macro.Models
         int Period { get; }
         int ItemDelay { get; }
         int Similarity { get; }
+        int DragDelay { get; }
         bool SearchResultDisplay { get; }
         bool VersionCheck { get; }
     }
@@ -23,6 +24,7 @@ namespace Macro.Models
         private int _ItemDelay = ConstHelper.MinItemDelay;
         private int _similarity = ConstHelper.DefaultSimilarity;
         private bool _searchResultDisplay = true;
+        private int _dragDelay = ConstHelper.MinItemDelay;
         private bool _versionCheck = true;
 
         public Language Language
@@ -89,7 +91,15 @@ namespace Macro.Models
                 OnPropertyChanged("VersionCheck");
             }
         }
-
+        public int DragDelay
+        {
+            get => _dragDelay;
+            set
+            {
+                _dragDelay = value;
+                OnPropertyChanged("DragDelay");
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)

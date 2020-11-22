@@ -18,6 +18,7 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5.5*"></ColumnDefinition>
@@ -40,15 +41,18 @@
                 <Label Grid.Row="4" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.Similarity, Source={StaticResource Locator}}"></Label>
                 <Controls:NumericUpDown Name="numSimilarity" Minimum="{Binding Source={x:Static util:ConstHelper.MinSimilarity}}" Grid.Row="4" Grid.Column="1" Value="{Binding Path=Config.Similarity, Mode=TwoWay}"></Controls:NumericUpDown>
 
-                <Label Grid.Row="5" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.SearchResultDisplay, Source={StaticResource Locator}}"></Label>
-                <ComboBox Name="comboSearchResultDisplay" Grid.Row="5" Grid.Column="1" FontSize="{Binding Source={x:Static util:ConstHelper.ItemFontSize}}" SelectedValue="{Binding Path=Config.SearchResultDisplay, Mode=TwoWay}">
+                <Label Grid.Row="5" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.DragDelay, Source={StaticResource Locator}}"></Label>
+                <Controls:NumericUpDown Name="numDragDelay"  Grid.Row="5" Grid.Column="1" Value="{Binding Path=Config.DragDelay, Mode=TwoWay}"></Controls:NumericUpDown>
+
+                <Label Grid.Row="6" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.SearchResultDisplay, Source={StaticResource Locator}}"></Label>
+                <ComboBox Name="comboSearchResultDisplay" Grid.Row="6" Grid.Column="1" FontSize="{Binding Source={x:Static util:ConstHelper.ItemFontSize}}" SelectedValue="{Binding Path=Config.SearchResultDisplay, Mode=TwoWay}">
                     <ComboBox.Items>
                         <system:Boolean>True</system:Boolean>
                         <system:Boolean>False</system:Boolean>
                     </ComboBox.Items>
                 </ComboBox>
 
-                <Label Grid.Row="6" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.VersionCheck, Source={StaticResource Locator}}"></Label>
+                <Label Grid.Row="7" Grid.Column="0" FontSize="{Binding Source={x:Static util:ConstHelper.FontSize}}" Content="{Binding Path=LabelViewModel.VersionCheck, Source={StaticResource Locator}}"></Label>
                 <ComboBox Name="comboVersionCheck" Grid.Row="6" Grid.Column="1" FontSize="{Binding Source={x:Static util:ConstHelper.ItemFontSize}}" SelectedValue="{Binding Path=Config.VersionCheck, Mode=TwoWay}">
                     <ComboBox.Items>
                         <system:Boolean>True</system:Boolean>
